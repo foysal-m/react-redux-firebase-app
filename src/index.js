@@ -4,10 +4,20 @@ import { Provider } from 'react-redux'
 import './index.css'
 import App from './components/App/App'
 import store from './state/store'
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
+import fbConfig from './config/fbConfig'
+import firebase from 'firebase'
 
+const rrfProps = {
+  firebase,
+  config: fbConfig,
+  dispatch: store.dispatch,
+}
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ReactReduxFirebaseProvider {...rrfProps}>
+      <App />
+    </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root'),
 )
