@@ -3,6 +3,7 @@ import SignIn from '../Auth/SignIn'
 import SignUp from '../Auth/SingUp'
 import Dashboard from '../Dashboard/Dashboard'
 import NavBar from '../Layout/NavBar'
+import CreateProject from '../Projects/CreateProject'
 import ProjectDetails from '../Projects/ProjectDetails'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/project/:id" component={ProjectDetails} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/create" component={CreateProject} />
         </Switch>
       </div>
     </Router>
