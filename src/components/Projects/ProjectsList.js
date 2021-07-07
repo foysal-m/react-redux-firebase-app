@@ -1,12 +1,17 @@
 import React from 'react'
 import ProjectsSummary from './ProjectsSummary'
+import { Link } from 'react-router-dom'
 
 function ProjectsList({ projects }) {
   return (
     <div className="project-list section">
       {projects &&
         projects.map((project) => {
-          return <ProjectsSummary project={project} key={project.id} />
+          return (
+            <Link to={'/project/' + project.id} key={project.id}>
+              <ProjectsSummary project={project} />
+            </Link>
+          )
         })}
     </div>
   )

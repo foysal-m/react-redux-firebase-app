@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import SignedInLinks from './SingedInLinks'
-import SignedOutLinks from './SingenOutLinks'
+import SignedInLinks from './SignedInLinks'
+import SignedOutLinks from './SignedOutLinks'
 
 function NavBar() {
   return (
@@ -17,4 +18,11 @@ function NavBar() {
   )
 }
 
-export default NavBar
+const mapStateToProps = (state) => {
+  console.log(state.firebase)
+  return {
+    firebase: state,
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)

@@ -24,7 +24,7 @@ function Dashboard(props) {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    projects: state.project.projects,
+    projects: state.firestore.ordered.projects,
   }
 }
 export default compose(
