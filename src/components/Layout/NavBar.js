@@ -4,24 +4,23 @@ import { Link } from 'react-router-dom'
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 
-function NavBar() {
+function NavBar({ auth }) {
+  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
         <Link to="/" className="brand-logo">
           MarioPlan
         </Link>
-        <SignedInLinks />
-        <SignedOutLinks />
+        {links}
       </div>
     </nav>
   )
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.firebase)
   return {
-    firebase: state,
+    auth: state.firebase.auth,
   }
 }
 

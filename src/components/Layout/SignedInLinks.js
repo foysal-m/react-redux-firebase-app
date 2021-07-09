@@ -1,9 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../state/actions/authAction'
 function SignedInLinks(props) {
-  console.log(props.signOut)
   return (
     <ul className="right">
       <li>
