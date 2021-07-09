@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { createProject } from '../../state/actions/projectAction'
 
-function CreateProject({ createProject, auth }) {
+function CreateProject({ createProject, auth, history }) {
   const [project, setProject] = useState({ title: '', content: '' })
   const handleChange = (e) => {
     setProject({
@@ -15,6 +15,7 @@ function CreateProject({ createProject, auth }) {
     e.preventDefault()
 
     createProject(project)
+    history.push('/')
   }
 
   if (!auth.uid) return <Redirect to="/signin" />
