@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment'
 
 function Notifications({ notifications }) {
-  console.log(notifications)
+  console.log(notifications && notifications.map((el) => el.user))
   return (
     <div className="section">
       <div className="card z-depth-0">
@@ -13,7 +13,7 @@ function Notifications({ notifications }) {
               notifications.map((item) => {
                 return (
                   <li key={item.id}>
-                    <span className="pink-text">{item.user}</span>
+                    <span className="pink-text">{item.user} </span>
                     <span className="pink-text">{item.content}</span>
                     <div className="grey-text note-date">
                       {moment(item.time.toDate()).fromNow()}
