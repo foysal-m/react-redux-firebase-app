@@ -2,7 +2,7 @@
 
 # dependencies added
 /node_modules
-/src/config/**
+/src/config/**/*.js
 /.pnp
 .pnp.js
 
